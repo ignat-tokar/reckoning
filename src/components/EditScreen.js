@@ -6,6 +6,7 @@ function EditScreen() {
 
   const navigate = useNavigate();
   
+  const [id, setId] = useState(null);
   const [title, setTitle] = useState('');
   const [countBuy, setCountBuy] = useState('');
   const [countSell, setCountSell] = useState('');
@@ -15,6 +16,7 @@ function EditScreen() {
   useEffect(()=>{
     let id = Number.parseInt(window.location.href.split('?')[1].split('=')[1]);
     let item = getItemById(id);
+    setId(item.id);
     setTitle(item.title);
     setCountBuy(item.countBuy);
     setCountSell(item.countSell);
@@ -39,6 +41,7 @@ function EditScreen() {
   }
   function editClickHandler() {
     let item = [{
+      id,
       title,
       countBuy,
       countSell,

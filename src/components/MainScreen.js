@@ -10,7 +10,7 @@ function MainScreen() {
 
   useEffect(()=>{
     setItems(getData());
-  },[setItems, store]);
+  },[setItems]);
   
   function backClickHandler() {
     navigate('/reckoning/add');
