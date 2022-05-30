@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemDataComponent from "./ItemDataComponent";
-import { getData } from "./localStore";
+import { store } from "./localStore";
 
 function MainScreen() {
 
   const navigate = useNavigate();
   const [items, setItems] = useState(null);
 
-  useEffect(() => {
-    setItems(getData());
-  }, [setItems, getData]);
+  useEffect(()=>{
+    setItems(store);
+  },[setItems, store]);
   
   function backClickHandler() {
     navigate('/reckoning/add');
