@@ -2,6 +2,7 @@
   text-align: center;
 }
 .App {
+  background-image: url('./assets/background.jpg');
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
