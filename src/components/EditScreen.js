@@ -59,10 +59,10 @@ function EditScreen() {
     <>
       <h2>Редагування товару</h2>
       <input value={title} onChange={onTitleChange} placeholder="Назва товару" />
-      <input type="number" value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />
-      <input type="number" value={priceSell} onChange={onPriceSellChange} placeholder="Цiна продовальча" />
-      <input type="number" value={countBuy} onChange={onCountBuyChange} placeholder="Кiлькiсть куплених" />
-      <input type="number" value={countSell} onChange={onCountSellChange} placeholder="Кiлькiсть проданих" />
+      <input value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />
+      <input value={priceSell} onChange={onPriceSellChange} placeholder="Цiна продовальча" />
+      <input value={countBuy} onChange={onCountBuyChange} placeholder="Кiлькiсть куплених" />
+      <input value={countSell} onChange={onCountSellChange} placeholder="Кiлькiсть проданих" />
       <button onClick={editClickHandler}>Зберегти</button>
       <button onClick={cancelClickHandler}>Вiдмiнити</button>
     </>
