@@ -18,11 +18,13 @@ export let store = [
 ]
 
 export const getData = () => {
+  store = JSON.parse(localStorage.getItem('items'));
   return store;
 }
 
 export const addNewItem = (item) => {
   store = [...store, {...item[0], id: store.length+1}]
+  localStorage.setItem('items', JSON.stringify(store));
 }
 
 export const editItem = (newItem) => {
@@ -34,6 +36,7 @@ export const editItem = (newItem) => {
     }
   })
   store = [...newStore];
+  localStorage.setItem('items', JSON.stringify(store));
 }
 
 export const getItemById = (id) => {

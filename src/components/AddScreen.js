@@ -34,7 +34,7 @@ function AddScreen() {
       countSell,
       priceBuy,
       priceSell,
-    }]
+    }]    
     addNewItem(item);
     navigate('/reckoning');
   }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemDataComponent from "./ItemDataComponent";
-import { store } from "./localStore";
+import { getData, store } from "./localStore";
 
 function MainScreen() {
 
@@ -9,7 +9,7 @@ function MainScreen() {
   const [items, setItems] = useState(null);
 
   useEffect(()=>{
-    setItems(store);
+    setItems(getData());
   },[setItems, store]);
   
   function backClickHandler() {
