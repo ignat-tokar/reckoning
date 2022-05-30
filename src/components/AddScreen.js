@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 function AddScreen() {
+
+  const navigate = useNavigate();
+
+  function addClickHandler() {
+    navigate('/add');
+  }
+
   return (
     <>
       <p>Данi нової одиницi товару</p>
@@ -7,7 +16,7 @@ function AddScreen() {
       <input placeholder="Цiна продовальча" />
       <input placeholder="Кiлькiсть куплених" />
       <input placeholder="Кiлькiсть проданих" />
-      <button>Додати</button>
+      <button onClick={addClickHandler}>Додати</button>
     </>
   );
 }
