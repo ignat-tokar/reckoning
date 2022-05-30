@@ -5,12 +5,12 @@ function AddScreen() {
   const navigate = useNavigate();
 
   function addClickHandler() {
-    navigate('/add');
+    navigate('/reckoning/add');
   }
 
   return (
     <>
-      <p>Данi нової одиницi товару</p>
+      <h2>Данi нової одиницi товару</h2>
       <input placeholder="Назва товару" />
       <input placeholder="Цiна закупочна" />
       <input placeholder="Цiна продовальча" />

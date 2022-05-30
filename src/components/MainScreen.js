@@ -5,7 +5,7 @@ function MainScreen() {
   const navigate = useNavigate();
 
   function backClickHandler() {
-    navigate('/');
+    navigate('/reckoning');
   }
 
   return (

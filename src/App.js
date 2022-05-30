@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<AddScreen />}/>
-          <Route path="/add" element={<MainScreen />}/>
+          <Route path="/reckoning" element={<AddScreen />}/>
+          <Route path="/reckoning/add" element={<MainScreen />}/>
         </Routes>
       </BrowserRouter>
     </div>
