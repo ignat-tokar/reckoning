@@ -32,3 +32,21 @@ p {
   padding-bottom: 10pt;
   font-size: 20pt;
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: black;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr {
+  background-color: white;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
