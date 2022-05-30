@@ -1,16 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import MainScreen from './components/MainScreen';
+import AddScreen from './components/AddScreen';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <p>Данi нової одиницi товару</p>
-      <input placeholder="Назва товару" />
-      <input placeholder="Цiна закупочна" />
-      <input placeholder="Цiна продовальча" />
-      <input placeholder="Кiлькiсть куплених" />
-      <input placeholder="Кiлькiсть проданих" />
-      <button>Додати</button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/reckoning" element={<MainScreen />}/>
+          <Route path="/reckoning/add" element={<AddScreen />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
