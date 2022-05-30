@@ -40,7 +40,7 @@ function EditScreen() {
     setPriceSell(e.target.value);
   }
   function editClickHandler() {
-    let item = [{
+    let editedItem = [{
       id,
       title,
       countBuy,
@@ -48,7 +48,7 @@ function EditScreen() {
       priceBuy,
       priceSell,
     }]
-    editItem(item);
+    editItem(editedItem);
     navigate('/reckoning');
   }
   function cancelClickHandler() {

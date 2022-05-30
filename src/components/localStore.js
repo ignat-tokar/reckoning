@@ -16,27 +16,30 @@ export let store = [
     priceSell: 150
   },
 ]
+export let needUpdate = false;
 
 export const getData = () => {
-  store = JSON.parse(localStorage.getItem('items'));
+  let store = JSON.parse(localStorage.getItem('items'));
   return store;
 }
 
 export const addNewItem = (item) => {
   store = [...store, {...item[0], id: store.length+1}]
   localStorage.setItem('items', JSON.stringify(store));
+  needUpdate = !needUpdate;
 }
 
 export const editItem = (newItem) => {
   let newStore = store.map(item => {
-    if(item.id === newItem.id){
-      return newItem;
+    if(item.id === newItem[0].id){
+      return newItem[0];
     }else{
       return item;
     }
   })
   store = [...newStore];
   localStorage.setItem('items', JSON.stringify(store));
+  needUpdate = !needUpdate;
 }
 
 export const getItemById = (id) => {

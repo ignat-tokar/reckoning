@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemDataComponent from "./ItemDataComponent";
-import { getData, store } from "./localStore";
+import { getData, needUpdate, store } from "./localStore";
 
 function MainScreen() {
 
   const navigate = useNavigate();
-  const [items, setItems] = useState(null);
+  const [items, setItems] = useState(getData());
 
-  useEffect(()=>{
-    setItems(getData());
-  },[setItems]);
-  
   function backClickHandler() {
     navigate('/reckoning/add');
   }
@@ -34,10 +30,11 @@ function MainScreen() {
             countSell={item.countSell}
             priceBuy={item.priceBuy}
             priceSell={item.priceSell}
+            setItems={setItems}
           />)
         }
       </table>
-      <button style={{ marginTop: '20pt' }}onClick={backClickHandler}>Додати новий товар</button>
+      <button style={{ marginTop: '20pt' }} onClick={backClickHandler}>Додати новий товар</button>
     </>
   );
 }

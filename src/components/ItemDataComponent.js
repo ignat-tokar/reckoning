@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { editItem } from "./localStore";
+import { editItem, getData, needUpdate } from "./localStore";
 
 function ItemDataComponent ({
   id,
@@ -7,20 +8,23 @@ function ItemDataComponent ({
   countBuy,
   countSell,
   priceBuy,
-  priceSell
+  priceSell,
+  setItems
 }) {
 
   const navigate = useNavigate();
 
   function plusCountSell(){
-    editItem({
+    let editedItem = [{
       id,
       title,
       countBuy: countBuy-1,
       countSell: countSell+1,
       priceBuy,
-      priceSell
-    });
+      priceSell,
+    }];
+    editItem(editedItem);
+    setItems(getData());
   }
 
   function onEditItem(e){
@@ -28,7 +32,7 @@ function ItemDataComponent ({
   }
 
   return (
-    <tr>
+    <tr key={id}>
       <td><button id={id} onClick={onEditItem}>{title}</button></td>
       <td>{countBuy}</td>
       <td><button onClick={plusCountSell}>{countSell}</button></td>
