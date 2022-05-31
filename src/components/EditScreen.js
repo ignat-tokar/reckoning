@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { editItem, getItemById } from "./localStore";
+import { deleteItem, editItem, getItemById } from "./localStore";
 
 function EditScreen() {
 
@@ -43,10 +43,10 @@ function EditScreen() {
     let editedItem = [{
       id,
       title,
-      countBuy,
-      countSell,
-      priceBuy,
-      priceSell,
+      countBuy: Number.parseInt(countBuy),
+      countSell: Number.parseInt(countSell),
+      priceBuy: Number.parseInt(priceBuy),
+      priceSell: Number.parseInt(priceSell),
     }]
     editItem(editedItem);
     navigate('/reckoning');
@@ -54,15 +54,20 @@ function EditScreen() {
   function cancelClickHandler() {
     navigate('/reckoning');
   }  
+  function deleteClickHandler() {
+    deleteItem(id);
+    navigate('/reckoning');
+  }   
 
   return (
     <>
       <h2>Редагування товару</h2>
+      <button onClick={deleteClickHandler}>Delete</button>
       <input value={title} onChange={onTitleChange} placeholder="Назва товару" />
-      <input value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />
-      <input value={priceSell} onChange={onPriceSellChange} placeholder="Цiна продовальча" />
-      <input value={countBuy} onChange={onCountBuyChange} placeholder="Кiлькiсть куплених" />
-      <input value={countSell} onChange={onCountSellChange} placeholder="Кiлькiсть проданих" />
+      <input type="number" value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />
+      <input type="number" value={priceSell} onChange={onPriceSellChange} placeholder="Цiна продовальча" />
+      <input type="number" value={countBuy} onChange={onCountBuyChange} placeholder="Кiлькiсть куплених" />
+      <input type="number" value={countSell} onChange={onCountSellChange} placeholder="Кiлькiсть проданих" />
       <button onClick={editClickHandler}>Зберегти</button>
       <button onClick={cancelClickHandler}>Вiдмiнити</button>
     </>

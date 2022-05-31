@@ -30,10 +30,10 @@ function AddScreen() {
   function addClickHandler() {
     let item = [{
       title,
-      countBuy,
-      countSell,
-      priceBuy,
-      priceSell,
+      countBuy: Number.parseInt(countBuy),
+      countSell: Number.parseInt(countSell),
+      priceBuy: Number.parseInt(priceBuy),
+      priceSell: Number.parseInt(priceSell),
     }]    
     addNewItem(item);
     navigate('/reckoning');
@@ -43,10 +43,10 @@ function AddScreen() {
     <>
       <h2>Данi нової одиницi товару</h2>
       <input value={title} onChange={onTitleChange} placeholder="Назва товару" />
-      <input value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />
-      <input value={priceSell} onChange={onPriceSellChange} placeholder="Цiна продовальча" />
-      <input value={countBuy} onChange={onCountBuyChange} placeholder="Кiлькiсть куплених" />
-      <input value={countSell} onChange={onCountSellChange} placeholder="Кiлькiсть проданих" />
+      <input type="number" value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />
+      <input type="number" value={priceSell} onChange={onPriceSellChange} placeholder="Цiна продовальча" />
+      <input type="number" value={countBuy} onChange={onCountBuyChange} placeholder="Кiлькiсть куплених" />
+      <input type="number" value={countSell} onChange={onCountSellChange} placeholder="Кiлькiсть проданих" />
       <button onClick={addClickHandler}>Додати</button>
     </>
   );
