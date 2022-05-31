@@ -2,8 +2,14 @@ export let store = []
 
 const ITEMS = 'reckoning/items/23984us92904';
 
+export let summaryProfit = 0;
+
 export const getData = () => {
   store = JSON.parse(localStorage.getItem(ITEMS)) ? JSON.parse(localStorage.getItem(ITEMS)) : store;
+  summaryProfit = 0;
+  store.map(item => {
+    summaryProfit += item.countSell*(item.priceSell-item.priceBuy);
+  })
   return store;
 }
 

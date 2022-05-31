@@ -85,3 +85,27 @@ h2 {
   width: 90%;
   padding-bottom: 55pt;  
 }
+.exitButtonBlock img {
+  background-color: rgb(0, 153, 255);
+  width: 22pt;
+  height: 22pt;
+  padding: 6pt;
+  border-radius: 8pt;
+  float: right;
+}
+.profitBlock {
+  flex-direction: row;
+  padding-top: 5pt;
+  width: 100%;
+}
+.profitBlock h4 {
+  float: left;
+  text-align: left;
+  padding-left: 2%;
+  width: 73%;
+}
+.profitBlock .profit {
+  float: right;
+  padding-left: 0%;
+  width: 25%;
+}

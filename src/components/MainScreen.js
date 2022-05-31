@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemDataComponent from "./ItemDataComponent";
-import { getData, needUpdate, store } from "./localStore";
+import { getData, needUpdate, store, summaryProfit } from "./localStore";
+import shopImage from "./../assets/shop.png";
+import calendarImage from "./../assets/calendar.png";
 
 function MainScreen() {
 
@@ -16,6 +18,8 @@ function MainScreen() {
     <>
       <div className={'exitButtonBlock'}>
         <button className={'backButton'} onClick={() => window.close()}>Вийти</button>
+        <img src={shopImage} onClick={()=> navigate('/reckoning/shop')} />
+        <img style={{marginRight: '20pt'}} src={calendarImage} onClick={()=> navigate('/reckoning/calendar')} />
       </div>    
       <h2>Список всiх товарiв</h2>
       <table>
@@ -38,6 +42,9 @@ function MainScreen() {
           />})
         }
       </table>
+      <div className="profitBlock">
+        <h4>Загальний прибуток :</h4><h4 className="profit">{summaryProfit} (грн)</h4>
+      </div>
       <button style={{ marginTop: '20pt' }} onClick={backClickHandler}>Додати новий товар</button>
     </>
   );
