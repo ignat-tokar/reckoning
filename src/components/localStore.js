@@ -37,8 +37,7 @@ export const editItem = (newItem) => {
     }else{
       return item;
     }
-  })
-  debugger
+  });
   store = [...newStore];
   localStorage.setItem('items', JSON.stringify(store));
 }

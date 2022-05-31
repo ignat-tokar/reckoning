@@ -41,6 +41,9 @@ function AddScreen() {
 
   return (
     <>
+      <div className={'backButtonBlock'}>
+        <button className={'backButton'} onClick={() => navigate('/reckoning')}>Назад</button>
+      </div>
       <h2>Данi нової одиницi товару</h2>
       <input value={title} onChange={onTitleChange} placeholder="Назва товару" />
       <input type="number" value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />

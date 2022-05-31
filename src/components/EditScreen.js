@@ -5,7 +5,7 @@ import { deleteItem, editItem, getItemById } from "./localStore";
 function EditScreen() {
 
   const navigate = useNavigate();
-  
+
   const [id, setId] = useState(null);
   const [title, setTitle] = useState('');
   const [countBuy, setCountBuy] = useState('');
@@ -13,7 +13,7 @@ function EditScreen() {
   const [priceBuy, setPriceBuy] = useState('');
   const [priceSell, setPriceSell] = useState('');
 
-  useEffect(()=>{
+  useEffect(() => {
     let id = window.location.href.split('?')[1].split('=')[1];
     let item = getItemById(id);
     setId(item.id);
@@ -22,7 +22,7 @@ function EditScreen() {
     setCountSell(item.countSell);
     setPriceBuy(item.priceBuy);
     setPriceSell(item.priceSell);
-  },[]);
+  }, []);
 
   function onTitleChange(e) {
     setTitle(e.target.value);
@@ -51,25 +51,24 @@ function EditScreen() {
     editItem(editedItem);
     navigate('/reckoning');
   }
-  function cancelClickHandler() {
-    navigate('/reckoning');
-  }  
   function deleteClickHandler() {
     deleteItem(id);
     navigate('/reckoning');
-  }   
+  }
 
   return (
     <>
+      <div className={'backButtonBlock'}>
+        <button className={'backButton'} onClick={() => navigate('/reckoning')}>Назад</button>
+        <button className={'deleteButton'} onClick={deleteClickHandler}>Видалити</button>
+      </div>
       <h2>Редагування товару</h2>
-      <button onClick={deleteClickHandler}>Delete</button>
       <input value={title} onChange={onTitleChange} placeholder="Назва товару" />
       <input type="number" value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />
       <input type="number" value={priceSell} onChange={onPriceSellChange} placeholder="Цiна продовальча" />
       <input type="number" value={countBuy} onChange={onCountBuyChange} placeholder="Кiлькiсть куплених" />
       <input type="number" value={countSell} onChange={onCountSellChange} placeholder="Кiлькiсть проданих" />
       <button onClick={editClickHandler}>Зберегти</button>
-      <button onClick={cancelClickHandler}>Вiдмiнити</button>
     </>
   );
 }

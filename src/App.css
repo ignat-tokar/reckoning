@@ -50,3 +50,15 @@ tr {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+.backButtonBlock {
+  flex-direction: row;
+  width: 90%;
+  padding-bottom: 40pt;
+}
+.backButton {
+  float: left;
+}
+.deleteButton {
+  float: right;
+  background-color: rgb(255, 0, 76);
+}
