@@ -19,6 +19,12 @@ export const addNewItem = (item) => {
   localStorage.setItem(ITEMS, JSON.stringify(store));
 }
 
+export const addShopItem = (item) => {
+  getData();
+  store = [...store, {...item}]
+  localStorage.setItem(ITEMS, JSON.stringify(store));
+}
+
 export const editItem = (newItem) => {
   getData();
   let newStore = store.map(item => {

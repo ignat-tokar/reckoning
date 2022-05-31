@@ -10,7 +10,7 @@ function MainScreen() {
   const navigate = useNavigate();
   const [items, setItems] = useState(getData());
 
-  function backClickHandler() {
+  function addClickHandler() {
     navigate('/reckoning/add');
   }
 
@@ -45,7 +45,7 @@ function MainScreen() {
       <div className="profitBlock">
         <h4>Загальний прибуток :</h4><h4 className="profit">{summaryProfit} (грн)</h4>
       </div>
-      <button style={{ marginTop: '20pt' }} onClick={backClickHandler}>Додати новий товар</button>
+      <button style={{ marginTop: '20pt' }} onClick={addClickHandler}>Додати новий товар</button>
     </>
   );
 }
