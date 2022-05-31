@@ -24,11 +24,13 @@ export const getData = () => {
 }
 
 export const addNewItem = (item) => {
+  getData();
   store = [...store, {...item[0], id: Math.random().toString(36).substring(2)}]
   localStorage.setItem('items', JSON.stringify(store));
 }
 
 export const editItem = (newItem) => {
+  getData();
   let newStore = store.map(item => {
     if(item.id === newItem[0].id){
       return newItem[0];
@@ -36,11 +38,13 @@ export const editItem = (newItem) => {
       return item;
     }
   })
+  debugger
   store = [...newStore];
   localStorage.setItem('items', JSON.stringify(store));
 }
 
 export const deleteItem = (id) => {
+  getData();
   let item = store.filter(obj => obj.id === id);
   store.splice(store.indexOf(item[0]), 1);
   localStorage.setItem('items', JSON.stringify(store));
