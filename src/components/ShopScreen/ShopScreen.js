@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemShopDataComponent from "./ItemShopDataComponent";
-import { getData } from "./shopStore";
+import { getData, summuryExpense } from "./shopStore";
 
 function ShopScreen() {
 
@@ -40,9 +40,9 @@ function ShopScreen() {
         }
       </table>
       {/* SummaryExpense */}
-      {/* <div className="profitBlock">
-        <h4>Загальний прибуток :</h4><h4 className="profit">{summaryProfit} (грн)</h4>
-      </div> */}
+      <div className="profitBlock">
+        <h4>Загальний видаток :</h4><h4 className="profit">{summuryExpense} (грн)</h4>
+      </div>
       <button style={{ marginTop: '20pt' }} onClick={addClickHandler}>Додати новий товар</button>
     </>
   );
