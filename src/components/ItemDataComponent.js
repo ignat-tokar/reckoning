@@ -18,8 +18,8 @@ function ItemDataComponent ({
     let editedItem = [{
       id,
       title,
-      countBuy: countBuy-1,
-      countSell: countSell+1,
+      countBuy: (countBuy>0) ? countBuy-1 : countBuy,
+      countSell: (countBuy>0) ? countSell+1 : countSell,
       priceBuy,
       priceSell,
     }];

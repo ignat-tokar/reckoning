@@ -62,3 +62,19 @@ tr:nth-child(even) {
   float: right;
   background-color: rgb(255, 0, 76);
 }
+.inputBlock {
+  flex-direction: row;
+  width: 95%;
+}
+.inputBlock span {
+  float: left;
+  text-align: left;
+  font-size: 16pt;
+  padding-top: 6pt;
+  /* padding-left: 2pt; */
+  width: 60%
+}
+.inputBlock input {
+  float: right;
+  width: 25%;
+}

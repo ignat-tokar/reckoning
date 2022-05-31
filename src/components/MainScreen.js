@@ -18,9 +18,9 @@ function MainScreen() {
       <table>
         <tr>
           <th>Назва товару</th>
-          <th>К-ть зак.</th>
-          <th>К-ть прод.</th>
-          <th>Приб.</th>
+          <th>К-cть зак.</th>
+          <th>К-cть прод.</th>
+          <th>Приб. (грн)</th>
         </tr>
         {items && items.map(item =>
           {

@@ -1,32 +1,16 @@
-export let store = [
-  {
-    id: '1',
-    title: 'Aromat some',
-    countBuy: 10,
-    countSell: 2,
-    priceBuy: 100,
-    priceSell: 110
-  },
-  {
-    id: '2',
-    title: 'Aromat some2',
-    countBuy: 8,
-    countSell: 4,
-    priceBuy: 110,
-    priceSell: 150
-  },
-]
+export let store = []
 
+const ITEMS = 'reckoning/items/23984us92904';
 
 export const getData = () => {
-  store = JSON.parse(localStorage.getItem('items')) ? JSON.parse(localStorage.getItem('items')) : store;
+  store = JSON.parse(localStorage.getItem(ITEMS)) ? JSON.parse(localStorage.getItem(ITEMS)) : store;
   return store;
 }
 
 export const addNewItem = (item) => {
   getData();
   store = [...store, {...item[0], id: Math.random().toString(36).substring(2)}]
-  localStorage.setItem('items', JSON.stringify(store));
+  localStorage.setItem(ITEMS, JSON.stringify(store));
 }
 
 export const editItem = (newItem) => {
@@ -39,17 +23,17 @@ export const editItem = (newItem) => {
     }
   });
   store = [...newStore];
-  localStorage.setItem('items', JSON.stringify(store));
+  localStorage.setItem(ITEMS, JSON.stringify(store));
 }
 
 export const deleteItem = (id) => {
   getData();
   let item = store.filter(obj => obj.id === id);
   store.splice(store.indexOf(item[0]), 1);
-  localStorage.setItem('items', JSON.stringify(store));
+  localStorage.setItem(ITEMS, JSON.stringify(store));
 }
 
 export const getItemById = (id) => {
-  let localStore = JSON.parse(localStorage.getItem('items'))
+  let localStore = JSON.parse(localStorage.getItem(ITEMS))
   return localStore.filter(item => item.id === id)[0];
 }

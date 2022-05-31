@@ -43,8 +43,8 @@ function EditScreen() {
     let editedItem = [{
       id,
       title,
-      countBuy: Number.parseInt(countBuy),
-      countSell: Number.parseInt(countSell),
+      countBuy: (countBuy === '') ? 0 : Number.parseInt(countBuy),
+      countSell: (countSell === '') ? 0 : Number.parseInt(countSell),
       priceBuy: Number.parseInt(priceBuy),
       priceSell: Number.parseInt(priceSell),
     }]
@@ -64,10 +64,22 @@ function EditScreen() {
       </div>
       <h2>Редагування товару</h2>
       <input value={title} onChange={onTitleChange} placeholder="Назва товару" />
-      <input type="number" value={priceBuy} onChange={onPriceBuyChange} placeholder="Цiна закупочна" />
-      <input type="number" value={priceSell} onChange={onPriceSellChange} placeholder="Цiна продовальча" />
-      <input type="number" value={countBuy} onChange={onCountBuyChange} placeholder="Кiлькiсть куплених" />
-      <input type="number" value={countSell} onChange={onCountSellChange} placeholder="Кiлькiсть проданих" />
+      <div className={'inputBlock'}>
+        <span>Цiна закупочна</span>
+        <input type="number" value={priceBuy} onChange={onPriceBuyChange} placeholder="грн" />
+      </div>
+      <div className={'inputBlock'}>
+        <span>Цiна продовальча</span>
+        <input type="number" value={priceSell} onChange={onPriceSellChange} placeholder="грн" />
+      </div>
+      <div className={'inputBlock'}>
+        <span>Кiлькiсть куплених</span>
+        <input type="number" value={countBuy} onChange={onCountBuyChange} placeholder="шт" />
+      </div>
+      <div className={'inputBlock'}>
+        <span>Кiлькiсть проданих</span>
+        <input type="number" value={countSell} onChange={onCountSellChange} placeholder="шт" />
+      </div>
       <button onClick={editClickHandler}>Зберегти</button>
     </>
   );
