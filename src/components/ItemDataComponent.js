@@ -27,8 +27,8 @@ function ItemDataComponent ({
     setItems(getData());
   }
 
-  function onEditItem(e){
-    navigate(`/reckoning/edit/?id=${e.target.id}`)
+  function onEditItem(){
+    navigate(`/reckoning/edit/?id=${id}`)
   }
 
   return (

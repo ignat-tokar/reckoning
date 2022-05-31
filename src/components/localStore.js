@@ -1,6 +1,6 @@
 export let store = [
   {
-    id: 1,
+    id: '1',
     title: 'Aromat some',
     countBuy: 10,
     countSell: 2,
@@ -8,7 +8,7 @@ export let store = [
     priceSell: 110
   },
   {
-    id: 2,
+    id: '2',
     title: 'Aromat some2',
     countBuy: 8,
     countSell: 4,
@@ -19,12 +19,12 @@ export let store = [
 
 
 export const getData = () => {
-  store = JSON.parse(localStorage.getItem('items'));
+  store = JSON.parse(localStorage.getItem('items')) ? JSON.parse(localStorage.getItem('items')) : store;
   return store;
 }
 
 export const addNewItem = (item) => {
-  store = [...store, {...item[0], id: store.length+1}]
+  store = [...store, {...item[0], id: Math.random().toString(36).substring(2)}]
   localStorage.setItem('items', JSON.stringify(store));
 }
 
@@ -41,7 +41,9 @@ export const editItem = (newItem) => {
 }
 
 export const deleteItem = (id) => {
-  return null;
+  let item = store.filter(obj => obj.id === id);
+  store.splice(store.indexOf(item[0]), 1);
+  localStorage.setItem('items', JSON.stringify(store));
 }
 
 export const getItemById = (id) => {

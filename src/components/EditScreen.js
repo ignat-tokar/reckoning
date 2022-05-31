@@ -14,7 +14,7 @@ function EditScreen() {
   const [priceSell, setPriceSell] = useState('');
 
   useEffect(()=>{
-    let id = Number.parseInt(window.location.href.split('?')[1].split('=')[1]);
+    let id = window.location.href.split('?')[1].split('=')[1];
     let item = getItemById(id);
     setId(item.id);
     setTitle(item.title);

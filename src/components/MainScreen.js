@@ -23,7 +23,8 @@ function MainScreen() {
           <th>Приб.</th>
         </tr>
         {items && items.map(item =>
-          <ItemDataComponent
+          {
+          return <ItemDataComponent
             id={item.id}
             title={item.title}
             countBuy={item.countBuy}
@@ -31,7 +32,7 @@ function MainScreen() {
             priceBuy={item.priceBuy}
             priceSell={item.priceSell}
             setItems={setItems}
-          />)
+          />})
         }
       </table>
       <button style={{ marginTop: '20pt' }} onClick={backClickHandler}>Додати новий товар</button>
