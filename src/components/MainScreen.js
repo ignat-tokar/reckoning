@@ -14,6 +14,9 @@ function MainScreen() {
 
   return (
     <>
+      <div className={'exitButtonBlock'}>
+        <button className={'backButton'} onClick={() => window.close()}>Вийти</button>
+      </div>    
       <h2>Список всiх товарiв</h2>
       <table>
         <tr>

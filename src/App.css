@@ -50,10 +50,13 @@ tr {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+h2 {
+  padding-bottom: 15pt;
+}
 .backButtonBlock {
   flex-direction: row;
   width: 90%;
-  padding-bottom: 40pt;
+  padding-bottom: 55pt;
 }
 .backButton {
   float: left;
@@ -71,10 +74,14 @@ tr:nth-child(even) {
   text-align: left;
   font-size: 16pt;
   padding-top: 6pt;
-  /* padding-left: 2pt; */
   width: 60%
 }
 .inputBlock input {
   float: right;
   width: 25%;
+}
+.exitButtonBlock {
+  flex-direction: row;
+  width: 90%;
+  padding-bottom: 55pt;  
 }
