@@ -19,7 +19,7 @@ function MainScreen() {
       <div className={'exitButtonBlock'}>
         <button className={'backButton'} onClick={() => window.close()}>Вийти</button>
         <img src={shopImage} onClick={()=> navigate('/reckoning/shop')} />
-        <img style={{marginRight: '20pt'}} src={calendarImage} onClick={()=> navigate('/reckoning/calendar')} />
+        {/* <img style={{marginRight: '20pt'}} src={calendarImage} onClick={()=> navigate('/reckoning/calendar')} /> */}
       </div>    
       <h2>Список всiх товарiв</h2>
       <table>
